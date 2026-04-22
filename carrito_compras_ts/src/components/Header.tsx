@@ -1,7 +1,15 @@
-import { useMemo } from "react";
+import type { Guitar } from '../types/index.ts'
 
+type HeaderProps = {
+    cart: Guitar[]
+    removeFromCart: (id:number) => void
+    increaseQuantity: (id:number) => void
+    decreaseQuantity: (id:number) => void
+    clearCart: (void) => void
+    is
+}
 
-export default function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal}){
+export default function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps){
 
 
     return(
