@@ -1,12 +1,13 @@
-import type { Guitar } from '../types/index.ts'
+import type { CartItem, Guitar } from '../types/index.ts'
 
 type HeaderProps = {
-    cart: Guitar[]
-    removeFromCart: (id:number) => void
-    increaseQuantity: (id:number) => void
-    decreaseQuantity: (id:number) => void
-    clearCart: (void) => void
-    is
+    cart: CartItem[]
+    removeFromCart: (id:Guitar['id']) => void
+    increaseQuantity: (id:Guitar['id']) => void
+    decreaseQuantity: (id:Guitar['id']) => void
+    clearCart: () => void
+    isEmpty: boolean
+    cartTotal: number
 }
 
 export default function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps){
